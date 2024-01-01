@@ -258,6 +258,13 @@ const FirstDetails = () => {
   }, [batchId]);
 
   const handleAdmissionChange = (name, value) => {
+
+    if (name === 'height' || name === 'weight') {
+      if (value.length > 6 || !/^\d*$/.test(value)) {
+        return;
+      }
+    }
+
     setAdmissionFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -266,6 +273,18 @@ const FirstDetails = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
+    if (name === 'phn' || name === 'wp_no') {
+      if (value.length > 10 || !/^\d*$/.test(value)) {
+        return;
+      }
+    }
+    if (name === 'pincode' ) {
+      if (value.length > 6 || !/^\d*$/.test(value)) {
+        return;
+      }
+    }
+
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -274,6 +293,16 @@ const FirstDetails = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const validEmailRegex = 
+      RegExp(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i);
+    if (!validEmailRegex.test(formData["email"])) {
+      alert("Email is not valid!");
+      return;
+    } 
+     if (formData["phn"].length !== 10 || !/^\d*$/.test(formData["phn"])) {
+      alert("Phone number is not valid! It should be 10 digits.");
+      return;
+    }
     try {
       let date = new Date(formData["dob"]); // assuming formData[key] is the date you're referring to
       let day = ("0" + date.getDate()).slice(-2); // get the day as a string in the format DD
@@ -309,7 +338,9 @@ const FirstDetails = () => {
       console.log(response.data); // Log the response from the server
 
       setState({ vertical: "bottom", horizontal: "right", open: true });
-      window.location.href = "https://mcfcamp.in/";    
+      window.location.href = "https://mcfcamp.in/";   
+
+       
     } catch (error) {
       setErrorState({
         vertical: "bottom",
@@ -474,15 +505,16 @@ const FirstDetails = () => {
                       Phone
                     </label>
                     <input
-                      id="Phone"
-                      name="phn"
-                      value={formData.phn}
-                      type="text"
-                      className="w-full px-3 py-2 border rounded shadow appearance-none"
-                      placeholder="Phone"
-                      onChange={handleChange}
-                      required
-                    />
+  id="Phone"
+  name="phn"
+  value={formData.phn}
+  type="text"
+  className="w-full px-3 py-2 border rounded shadow appearance-none"
+  placeholder="Phone"
+  onChange={handleChange}
+  maxLength="10"
+  required
+/>
                   </div>
                   <div className="mb-4">
                     <label
