@@ -565,24 +565,40 @@ const FirstDetails = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="mb-4">
-                    <label
+                <div className="mb-4">
+                <label
                       htmlFor="standard"
                       className="block text-sm font-medium text-gray-600"
                     >
                       Standard
                     </label>
-                    <input
-                      id="standard"
-                      name="standard"
-                      value={formData.standard}
-                      type="text"
-                      className="w-full px-3 py-2 border rounded shadow appearance-none"
-                      placeholder="Standard"
-                      onChange={handleChange}
-                      required
-                    />
+                    <select
+                     id="standard"
+                     name="standard"
+                     value={formData.standard}
+                     type="text"
+                     className="w-full px-3 py-2 border rounded shadow appearance-none"
+                     placeholder="Standard"
+                     onChange={handleChange}
+                     required
+                    >
+                      {/* Options for Camp Category */}
+                      <option value="">Select Standard</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>
                   </div>
+                  
                   <div className="mb-4">
                     <label
                       htmlFor="wp_no"
