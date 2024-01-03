@@ -11,6 +11,8 @@ import { useNavigate } from "react-router-dom";
 // import { PopperProps } from "@mui/material";
 import logo from '../../images/logo.jpg';
 const baseurl = "https://mcfapis.bnbdevelopers.in";
+// import watermark from './watermark.jpg';
+
 
 const FirstDetails = () => {
   const reqData = new FormData();
@@ -393,6 +395,8 @@ const FirstDetails = () => {
 
   return (
     <div>
+      
+      
         <div>
           {/* Navbar */}
           <nav className="navbar navbar-expand-lg" style={{ backgroundColor: '#ADD8E6' }}>
@@ -408,8 +412,12 @@ const FirstDetails = () => {
       
       {/* Payment Form */}
       <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-screen-xl mx-auto">
+        
+      
         <div className="grid grid-cols-12 gap-6">
+          
           <div className="col-span-full xl:col-span-12 bg-white dark:bg-slate-800 shadow-lg rounded-sm border border-slate-200 dark:border-slate-700">
+          <div className="watermark">
             <header
               className="px-5 py-4 border-b border-slate-100 dark:border-slate-700"
               style={{ display: "flex", justifyContent: "space-between" }}
@@ -1615,6 +1623,7 @@ const FirstDetails = () => {
           </div>
         </div>
       </div>
+    </div>
 
       <div className="flex justify-around ">
         {/* <button
@@ -1676,6 +1685,7 @@ const FirstDetails = () => {
           {errorState.message}
         </Alert>
       </Snackbar>
+     
     </div>
   );
 };
