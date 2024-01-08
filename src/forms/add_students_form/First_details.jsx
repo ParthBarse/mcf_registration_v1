@@ -137,7 +137,7 @@ const FirstDetails = () => {
     batch_id: "",
     selectedDate: "",
     food_option: "",
-    dress_code: "",
+    // dress_code: "",
     pick_up_city: "",
     pick_up_point: "",
     height: "",
@@ -166,7 +166,7 @@ const FirstDetails = () => {
   };
 
   const [files, setFiles] = useState({
-    medicalCertificate: "",
+    // medicalCertificate: "",
     cadetPhoto: "",
     cadetSign: "",
     parentGurdianPhoto: "",
@@ -390,26 +390,26 @@ const FirstDetails = () => {
   const [couponStatus, setCouponStatus] = useState(true);
   const [discountCode, setDiscountCode] = useState("");
 
-  const formatDate = (date) => {
-    const day = ("0" + date.getDate()).slice(-2);
-    const month = ("0" + (date.getMonth() + 1)).slice(-2);
-    const year = date.getFullYear();
+  // const formatDate = (date) => {
+  //   const day = ("0" + date.getDate()).slice(-2);
+  //   const month = ("0" + (date.getMonth() + 1)).slice(-2);
+  //   const year = date.getFullYear();
 
-    return `${day}/${month}/${year}`;
-  };
+  //   return `${day}/${month}/${year}`;
+  // };
 
-  // Inside your component
-  const [date, setDate] = useState(new Date());
+  // // Inside your component
+  // const [date, setDate] = useState(new Date());
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setDate(new Date());
-    }, 1000);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     setDate(new Date());
+  //   }, 1000);
 
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
+  //   return () => {
+  //     clearInterval(timer);
+  //   };
+  // }, []);
 
   return (
     <div>
@@ -421,29 +421,18 @@ const FirstDetails = () => {
         >
           <div style={{ display: 'flex',justifyContent:"space-between"}}>
           <a className="navbar-brand" href="#">
-            <img src={logo} width="163" height="50" alt="Logo" />
+            <img id="image" src={logo} alt="Logo" />
           </a>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <h1 style={{
-              fontSize: "1.6rem",
-              fontWeight: "bold",
-              fontFamily: "Palace Script MT",
-              fontStyle: "italic",
-            }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0 1em' }}>
+            <h1 id="slogan" >
               "Creating Tommarow's Responsible Citizen"
             </h1>
-            <h1>MCF's</h1>
-            <h1 style={{
-              fontSize: "3rem",
-              fontWeight: "bold",
-            }}>MCF SUMMER CAMP</h1>
-            <h1 style={{
-              fontSize: "1.2rem",
-              fontWeight: "bold",
-            }}>MAHARASHTRA</h1>
+            <h1 id="mcfs">MCF's</h1>
+            <h1  id="head" >MCF SUMMER CAMP</h1>
+            <h1 id="mh">MAHARASHTRA</h1>
           </div>
             <a className="navbar-brand" href="#">
-              <img src={cclogo} width="163" alt="Logo" />
+              <img id="image" src={cclogo} alt="Logo" />
             </a>
           </div>
         </nav>
@@ -453,18 +442,17 @@ const FirstDetails = () => {
         <div className="flex-row" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
           <h1
             className="text-center"
-            style={{ fontSize: "2em", fontWeight: "bold", marginTop: 2 }}
+           id="admission"
           >
             ADMISSION FORM
           </h1>
-          <p className="text-right" style={{fontSize:"1rem"}}>Date: {formatDate(date)}</p>
         </div>
         <Divider style={{ borderWidth: '3px' }}/> 
         </div>       
         {/* Rest of your code */}
 
-      {/* Payment Form */}
-      <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-screen-xl mx-auto">
+        {/* Payment Form */}
+        <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-screen-xl mx-auto">
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-full xl:col-span-12 bg-white dark:bg-slate-800 shadow-lg rounded-sm border border-slate-200 dark:border-slate-700">
             <div className="watermark">
@@ -1142,7 +1130,7 @@ const FirstDetails = () => {
                     </select>
                   </div>
 
-                  <div className="mb-4">
+                  {/* <div className="mb-4">
                     <label
                       htmlFor="dress_code"
                       className="block text-sm font-medium text-gray-600"
@@ -1159,13 +1147,13 @@ const FirstDetails = () => {
                       className="w-full px-3 py-2 border rounded shadow appearance-none"
                     >
                       {/* Options for Dress Code */}
-                      <option value="">Select Dress Code </option>
+                      {/* <option value="">Select Dress Code </option>
                       <option value="trackSuit">TRACK SUIT</option>
                       <option value="combatDress">COMBAT DRESS </option>
                       <option value="cheetaDress">CHEETA DRESS</option>
                       <option value="blackDress">BLACK DRESS </option>
                     </select>
-                  </div>
+                  </div>  */}
 
                   <div className="mb-4">
                     <label
@@ -1304,7 +1292,7 @@ const FirstDetails = () => {
                     {/* Options for Blood Group */}
                   </div>
 
-                  <div className="mb-4">
+                  {/* <div className="mb-4">
                     <label
                       htmlFor="medicalCertificate"
                       className="block text-sm font-medium text-gray-600"
@@ -1318,7 +1306,7 @@ const FirstDetails = () => {
                       onChange={(e) => handleFileChange(e)}
                       className="w-full px-3 py-2 border rounded shadow appearance-none"
                     />
-                  </div>
+                  </div> */}
 
                   <hr className="my-4 h-1 bg-gray-200" />
 

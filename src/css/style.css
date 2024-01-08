@@ -32,8 +32,57 @@
     bottom: 0;
     right: 0;
     position: absolute;
-    z-index: 2;   
+    z-index: -1;   
   }
+
+
+#slogan {
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: 'Palace Script MT';
+    font-style: italic;
+}
+
+#head{
+    
+        font-Size: 3rem;
+        font-weight: bold;
+      
+}
+#mh{
+     
+    font-Size: "1.2rem";
+    font-weight: "bold";
+  
+}
+
+#image{
+    width:10rem; 
+}
+
+#admission{
+    font-Size: 2em; font-Weight: bold; margin-top: 2;
+}
+
+@media (max-width: 600px) {
+    #slogan {
+        font-size: 1rem;
+    }
+    #head{
+        font-size: 1rem;
+    }
+    #mh{
+        font-size: 1rem;
+    }
+    #image{
+        width:6rem; 
+    }
+    #admission{
+        font-size: 1rem;
+    }
+   
+}
+
 
 .watermark {
     position: relative;
